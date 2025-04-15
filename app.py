@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 from scraper import get_product_data
 from db import init_db, insert_product, get_all_products
@@ -18,7 +19,7 @@ def index():
             message = "Failed to retrieve product data."
 
     products = get_all_products()
-    return render_template("index.html", products=products, message=message)
+    return render_template("/index.html", products=products, message=message)
 
 if __name__ == "__main__":
     app.run(debug=True)

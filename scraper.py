@@ -22,7 +22,7 @@ def get_amazon_price(url):
         title = driver.find_element(By.ID, "productTitle").text.strip()
 
         # Get product price
-        price = driver.find_element(By.CLASS_NAME, "a-offscreen").text.strip()
+        price = driver.find_element(By.XPATH, "//span[@class='a-price-whole']").text.strip()
 
         return {
             "title": title,
@@ -36,6 +36,6 @@ def get_amazon_price(url):
         driver.quit()
 
 if __name__ == "__main__":
-    product_url = "https://www.amazon.co.uk/Google-Fitbit-tracking-management-features/dp/B0CGX9JPWY/ref=pd_ci_mcx_mh_pe_im_d1_hxwPPE_sspa_dk_det_cao_p_0_0?pd_rd_i=B0CGX9JPWY&pd_rd_w=lKb7Z&content-id=amzn1.sym.7d048aad-7058-4131-afb2-93865dd4fb90&pf_rd_p=7d048aad-7058-4131-afb2-93865dd4fb90&pf_rd_r=05PXCQMG00DBQPRKND5G&pd_rd_wg=99gvb&pd_rd_r=898d69d5-0f5d-4519-aa60-5a5e6a1cb1f5&th=1"  # Replace this with any product
+    product_url = "https://www.amazon.co.uk/Google-Fitbit-tracking-management-features/dp/B0CGX9JPWY/ref=pd_ci_mcx_mh_pe_im_d1_hxwPPE_sspa_dk_det_cao_p_0_0?pd_rd_i=B0CGX9JPWY&pd_rd_w=lKb7Z&content-id=amzn1.sym.7d048aad-7058-4131-afb2-93865dd4fb90&pf_rd_p=7d048aad-7058-4131-afb2-93865dd4fb90&pf_rd_r=05PXCQMG00DBQPRKND5G&pd_rd_wg=99gvb&pd_rd_r=898d69d5-0f5d-4519-aa60-5a5e6a1cb1f5&th=1"  
     data = get_amazon_price(product_url)
     print(data)

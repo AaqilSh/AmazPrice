@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Price Result</title>
+  </head>
+  <body>
+    <h1>Amazon Price Result</h1>
+    <p>
+      <strong>Product URL:</strong>
+      <a href="{{ url }}" target="_blank">{{ url }}</a>
+    </p>
+
+    {% if result.error %}
+    <p style="color: red">Error: {{ result.error }}</p>
+    {% else %}
+    <p><strong>Title:</strong> {{ result.title }}</p>
+    <p><strong>Price:</strong> {{ result.price }}</p>
+    {% endif %}
+
+    <a href="/">Check another</a>
+  </body>
+</html>

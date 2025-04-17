@@ -8,18 +8,16 @@ init_db()
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    message = ""
+    # message = ""
     if request.method == "POST":
         url = request.form["url"]
-        data = get_product_data(url)
-        if data:
-            insert_product(data["title"], url, data["price"])
-            message = f"Added: {data['title']} - {data['price']}"
-        else:
-            message = "Failed to retrieve product data."
+        if url:
+            result = get_amazon_price(url)
+            return render_template('result.html', result=result, url=url)
+        return render_template('index.html')
 
-    products = get_all_products()
-    return render_template("/index.html", products=products, message=message)
+    # products = get_all_products()
+    # return render_template("/index.html", products=products, message=message)
 
 if __name__ == "__main__":
     app.run(debug=True)

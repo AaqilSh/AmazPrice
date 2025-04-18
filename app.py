@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request
-from scraper import get_product_data
+from scraper import get_amazon_price
 from db import init_db, insert_product, get_all_products
 
 app = Flask(__name__)

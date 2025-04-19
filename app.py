@@ -11,6 +11,7 @@ def index():
     # message = ""
     if request.method == "POST":
         url = request.form["url"]
+        print(f"URL received: {url}")
         if url:
             result = get_amazon_price(url)
             return render_template('result.html', result=result, url=url)

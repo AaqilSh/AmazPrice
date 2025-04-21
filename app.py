@@ -16,6 +16,7 @@ def index():
             result = get_amazon_price(url)
             return render_template('result.html', result=result, url=url)
         return render_template('index.html')
+    return render_template('index.html')
 
     # products = get_all_products()
     # return render_template("/index.html", products=products, message=message)

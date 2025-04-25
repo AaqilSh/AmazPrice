@@ -25,6 +25,7 @@
         <h1>Amazon Price Tracker</h1>
       </div>
       <div class="panel panel-default">
+        <div class="panel-body">
         <form method="POST">
           <div class="form-group">
             <label for="url">Amazon Product URL:</label><br />
@@ -41,8 +42,9 @@
           <button type="submit">Track Price</button>
         </form>
       </div>
-
+      <div class="alert alert-info text-center" style="margin-top: 15px;">
       <p>{{ message }}</p>
+    </div>
 
       <h2>Tracked Products</h2>
       <ul>

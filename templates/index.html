@@ -20,34 +20,36 @@
     />
   </head>
   <body>
-    <center>
-      <h1>Amazon Price Tracker</h1>
-    </center>
-    <form method="POST">
-      <label for="url">Amazon Product URL:</label><br />
-      <input
-        type="text"
-        name="url"
-        id="url"
-        placeholder="Enter Amazon product URL"
-        size="60"
-        required
-      />
-      <button type="submit">Track Price</button>
-    </form>
+    <div class="container">
+      <div class="page-header text-center">
+        <h1>Amazon Price Tracker</h1>
+      </div>
+      <form method="POST">
+        <label for="url">Amazon Product URL:</label><br />
+        <input
+          type="text"
+          name="url"
+          id="url"
+          placeholder="Enter Amazon product URL"
+          size="60"
+          required
+        />
+        <button type="submit">Track Price</button>
+      </form>
 
-    <p>{{ message }}</p>
+      <p>{{ message }}</p>
 
-    <h2>Tracked Products</h2>
-    <ul>
-      {% for product in products %}
-      <li>
-        <strong>{{ product[1] }}</strong> - {{ product[3] }} ({{ product[4]
-        }})<br />
-        <a href="{{ product[2] }}" target="_blank">{{ product[2] }}</a>
-      </li>
-      {% endfor %}
-    </ul>
+      <h2>Tracked Products</h2>
+      <ul>
+        {% for product in products %}
+        <li>
+          <strong>{{ product[1] }}</strong> - {{ product[3] }} ({{ product[4]
+          }})<br />
+          <a href="{{ product[2] }}" target="_blank">{{ product[2] }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-1.12.4.min.js"

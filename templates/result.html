@@ -15,18 +15,21 @@
       <div class="page-header text-center">
         <h1>Amazon Price Result</h1>
       </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+            <strong>Product URL:</strong>
+            <a href="{{ url }}" target="_blank">{{ url }}</a>
+          </p>
 
-      <p>
-        <strong>Product URL:</strong>
-        <a href="{{ url }}" target="_blank">{{ url }}</a>
-      </p>
-
-      {% if result.error %}
-      <p style="color: red">Error: {{ result.error }}</p>
-      {% else %}
-      <p><strong>Title:</strong> {{ result.title }}</p>
-      <p><strong>Price:</strong> {{ result.price }}</p>
-      {% endif %}
+          {% if result.error %}
+          <p style="color: red">Error: {{ result.error }}</p>
+          {% else %}
+          <p><strong>Title:</strong> {{ result.title }}</p>
+          <p><strong>Price:</strong> {{ result.price }}</p>
+          {% endif %}
+        </div>
+      </div>
 
       <a href="/">Check another</a>
     </div>

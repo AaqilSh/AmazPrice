@@ -23,7 +23,9 @@
           </p>
 
           {% if result.error %}
-          <p style="color: red">Error: {{ result.error }}</p>
+          <div class="alert alert-danger">
+            <p style="color: red">Error: {{ result.error }}</p>
+          </div>
           {% else %}
           <p><strong>Title:</strong> {{ result.title }}</p>
           <p><strong>Price:</strong> {{ result.price }}</p>
